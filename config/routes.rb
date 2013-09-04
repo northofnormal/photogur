@@ -6,6 +6,9 @@ Photogur::Application.routes.draw do
   get 'pictures/new' => 'pictures#new'
   get 'pictures/:id' => 'pictures#show', as: "picture"
 
+  get 'pictures/:id/edit' => "pictures#edit", as: "edit_picture"
+  put 'pictures/:id' => "pictures#update", as: "update_picture"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
