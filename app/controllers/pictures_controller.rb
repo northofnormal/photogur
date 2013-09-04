@@ -4,11 +4,15 @@ class PicturesController < ApplicationController
 	end
 
 	def show
-		@pictures = Picture.find(params[:id])
+		@picture = Picture.find(params[:id])
 	end
 
 	def new
 		@picture = Picture.new
+	end
+
+	def edit
+		@picture = Picture.find(params[:id])
 	end
 
 	def create
@@ -24,10 +28,6 @@ class PicturesController < ApplicationController
 
 	def picture_params
 		params.require(:picture).permit(:artist, :title, :url)
-	end
-
-	def edit
-		@picture = Picture.find(params[:id])
 	end
 
 	def update
