@@ -1,24 +1,32 @@
-<h1>Edit Picture</h1>
+<div id="wrapper">
+<h1>AnniePix</h1>
 
-<p><%= link_to "Back", @picture %></p>
+	<h3><%= link_to "Back", @picture %></h3>
+	<div class="show_image">
+	<h2>Edit this picture</h2>
+	<img class="edit_image" src="<%= @picture[:url] %>">
 
-<%= form_for @picture do |f| %>
-	<p>
-		<%= f.label "artist" %>
-		<%= f.text_field "artist" %>
-	</p>
+	<div class="edit_form">
+	<%= form_for @picture do |f| %>
+		<p><strong>
+			<%= f.label "artist" %></strong>
+			<%= f.text_field "artist" %>
+		</p>
 
-	<p>
-		<%= f.label "title" %>
-		<%= f.text_field "title" %>
-	</p>
+		<p><strong>
+			<%= f.label "title" %></strong>
+			<%= f.text_field "title" %>
+		</p>
 
-	<p>
-		<%= f.label "url" %>
-		<%= f.text_field "url" %>
-	</p>
+		<p><strong>
+			<%= f.label "url" %></strong>
+			<%= f.text_field "url" %>
+		</p>
 
-	<p>
-		<%= submit_tag "Save" %>
-	</p>
-<% end %>
+		<p>
+			<%= submit_tag "Save" %>
+		</p>
+	</div>
+	<% end %>
+</div>
+</div>

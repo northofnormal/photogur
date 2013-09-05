@@ -1,7 +1,13 @@
-<h1>Pictures (<%= @pictures.length %>)</h1>
-<%= link_to "New Picture", "/pictures/new" %>
-<% @pictures.each do |picture| %>
-  <p><%= picture[:title] %>, <%= picture[:artist] %></p>
-  <%= link_to image_tag(picture.url), "pictures/#{picture.id}" %>
-
-<% end %>
+<div id="wrapper">
+	<div id="column">
+		<h1>Anniepix</h1>
+		<h3><%= link_to "Add A Picture", "/pictures/new" %></h3>
+		<% @pictures.each do |picture| %>
+		<div class="index_image">
+			<%= link_to image_tag(picture.url), "pictures/#{picture.id}" %>
+			<p><strong>Title:</strong> <%= picture[:title] %><br>
+				<strong>Aritst:</strong> <%= picture[:artist] %></p>
+		</div>
+		<% end %>
+	</div>
+</div>

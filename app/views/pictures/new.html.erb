@@ -1,16 +1,19 @@
-<h1>Add a picture</h1>
-<%= link_to "Back to pictures", pictures_url %>
+<div id="wrapper">
+<h1>Anniepix</h1>
+<h3><%= link_to "Back to pictures", pictures_url %></h3>
+<h2>Add a picture</h2>
+<div class="add">
 <%= form_for @picture do |f| %>
-  <p>
-    <%= f.label "artist" %><br>
+  <p><strong>
+    <%= f.label "artist" %><br></strong>
     <%= f.text_field "artist" %>
   </p>
-  <p>
-    <%= f.label "title" %><br>
+  <p><strong>
+    <%= f.label "title" %><br></strong>
     <%= f.text_field "title" %>
   </p>
-  <p>
-    <%= f.label "url" %><br>
+  <p><strong>
+    <%= f.label "url" %><br></strong>
     <%= f.text_field "url" %>
   </p>
   <p>
@@ -18,3 +21,5 @@
   </p>
 <% end %>
 </form>
+</div>
+</div>
